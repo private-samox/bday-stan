@@ -252,7 +252,7 @@ else {
 			gal.scene.add(gal.worldLight);
 
             //set the floor up
-            gal.floorText = THREE.ImageUtils.loadTexture("img/Textures/Floor.jpg");
+            gal.floorText = THREE.ImageUtils.loadTexture("public/img/Textures/Floor.jpg");
             gal.floorText.wrapS = THREE.RepeatWrapping;
             gal.floorText.wrapT = THREE.RepeatWrapping;
             gal.floorText.repeat.set(24,24);
@@ -337,7 +337,7 @@ else {
 					var ratiow = 0;
 					var ratioh = 0;
 
-					var source = './img/Artworks/' + (index).toString() + '.jpg';
+					var source = 'public/img/Artworks/' + (index).toString() + '.jpg';
 					artwork.src = source;
                     
                     var texture = THREE.ImageUtils.loadTexture(artwork.src);
