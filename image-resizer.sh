@@ -4,7 +4,7 @@
 # Author: Mike
 
 # absolute path to image folder
-FOLDER="/var/www/wp-bullet.com/wp-content/uploads"
+FOLDER="/Users/sammy/Projects/sandbox/gallery/public/img/Artworks"
 
 # max height
 WIDTH=540
