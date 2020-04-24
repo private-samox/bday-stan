@@ -330,7 +330,7 @@ else {
            
 			gal.num_of_paintings = 30;
 			gal.paintings = [];
-			for(var i = 0; i < gal.num_of_paintings; i++){
+			for(var i = 0; i < 3; i++){
 				(function(index) {
                     //https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image
 					var artwork = new Image();
@@ -354,12 +354,12 @@ else {
 						if(index <= Math.floor(gal.num_of_paintings/2)-1) //bottom half
 						{
 							//plane.rotation.z = Math.PI/2;
-                            plane.position.set(2.7 * index - 17.5,2,-2.96); //y and z kept constant
+                            plane.position.set(7 * index - 15,2.2,-2.99); //y and z kept constant
 						}
 						else
 						{
 							//plane.rotation.z = Math.PI/2;
-                            plane.position.set(2.7 * index - 55 ,2 ,2.96);
+                            plane.position.set(4 * index - 55 ,2 ,2.99);
                             //plane.position.set(65*i - 75*Math.floor(gal.num_of_paintings/2) - 15*Math.floor(num_of_paintings/2), 48, 90);
 							plane.rotation.y = Math.PI;
 						}https://aerotwist.com/tutorials/create-your-own-environment-maps/
@@ -430,7 +430,7 @@ else {
                 //calculate objects interesting ray
                 gal.intersects = gal.raycaster.intersectObjects(gal.paintings);
                 if(gal.intersects.length !== 0) {
-                    gal.intersects[0].object.material.color.set(0xaaeeee);
+                    // gal.intersects[0].object.material.color.set(0xaaeeee);
                     //console.log(intersects[0].distance);
                     console.log(gal.intersects[0].point);
                 }
