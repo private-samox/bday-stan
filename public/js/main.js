@@ -259,7 +259,7 @@ else {
 
             //Phong is for shiny surfaces
 			gal.floorMaterial = new THREE.MeshPhongMaterial( {map: gal.floorText } );
-			gal.floor = new THREE.Mesh(new THREE.PlaneGeometry(45,45), gal.floorMaterial);
+			gal.floor = new THREE.Mesh(new THREE.PlaneGeometry(80,80), gal.floorMaterial);
 
 			gal.floor.rotation.x = Math.PI/2;
             gal.floor.rotation.y = Math.PI;
@@ -269,18 +269,18 @@ else {
 			gal.wallGroup = new THREE.Group();
 			gal.scene.add(gal.wallGroup);
 
-			gal.wall1 = new THREE.Mesh(new THREE.BoxGeometry(40,6, 0.001), new THREE.MeshLambertMaterial({color: 0xffffff}));
+			gal.wall1 = new THREE.Mesh(new THREE.BoxGeometry(80,6, 0.001), new THREE.MeshLambertMaterial({color: 0xffffff}));
 			gal.wall2 = new THREE.Mesh(new THREE.BoxGeometry(6,6, 0.001), new THREE.MeshLambertMaterial({color: 0xffffff}));
 			gal.wall3 = new THREE.Mesh(new THREE.BoxGeometry(6,6, 0.001), new THREE.MeshLambertMaterial({color: 0xffffff}));
-			gal.wall4 = new THREE.Mesh(new THREE.BoxGeometry(40,6, 0.001), new THREE.MeshLambertMaterial({color: 0xffffff}));
+			gal.wall4 = new THREE.Mesh(new THREE.BoxGeometry(80,6, 0.001), new THREE.MeshLambertMaterial({color: 0xffffff}));
 
 			gal.wallGroup.add(gal.wall1, gal.wall2, gal.wall3, gal.wall4);
 			gal.wallGroup.position.y = 3;
 
 			gal.wall1.position.z = -3;
-			gal.wall2.position.x = -20;
+			gal.wall2.position.x = -30;
 			gal.wall2.rotation.y = Math.PI/2;
-			gal.wall3.position.x = 20;
+			gal.wall3.position.x = 30;
 			gal.wall3.rotation.y = -Math.PI/2;
 			gal.wall4.position.z = 3;
 			gal.wall4.rotation.y = Math.PI;
@@ -293,7 +293,7 @@ else {
 			//Ceiling//
 			//gal.ceilMaterial = new THREE.MeshLambertMaterial({color: 0x8DB8A7});
 			gal.ceilMaterial = new THREE.MeshLambertMaterial({color: 0xeeeeee});
-			gal.ceil = new THREE.Mesh(new THREE.PlaneGeometry(40,6), gal.ceilMaterial);
+			gal.ceil = new THREE.Mesh(new THREE.PlaneGeometry(80,6), gal.ceilMaterial);
 			gal.ceil.position.y = 6;
 			gal.ceil.rotation.x = Math.PI/2;
 
@@ -418,10 +418,10 @@ else {
                 if(gal.controls.getObject().position.z > 2) {
                         gal.controls.getObject().position.z = 2;
                 }
-                if(gal.controls.getObject().position.x < -18) {
+                if(gal.controls.getObject().position.x < -30) {
                         gal.controls.getObject().position.x = -18;
                 }
-                if(gal.controls.getObject().position.x > 18) {
+                if(gal.controls.getObject().position.x > 30) {
                         gal.controls.getObject().position.x = 18;
                 }
 
