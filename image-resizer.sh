@@ -7,10 +7,10 @@
 FOLDER="/Users/sammy/Projects/sandbox/gallery/public/img/Artworks"
 
 # max height
-WIDTH=540
+WIDTH=2120
 
 # max width
-HEIGHT=300
+HEIGHT=1200
 
 #resize png or jpg to either height or width, keeps proportions using imagemagick
 #find ${FOLDER} -iname '*.jpg' -o -iname '*.png' -exec convert \{} -verbose -resize $WIDTHx$HEIGHT\> \{} \;

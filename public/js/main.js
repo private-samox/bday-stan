@@ -354,12 +354,12 @@ else {
 						if(index <= Math.floor(12/2)-1) //bottom half
 						{
 							//plane.rotation.z = Math.PI/2;
-                            plane.position.set(6 * index - 15,2.5,-2.97); //y and z kept constant
+                            plane.position.set(5 * index - 15,2,-2.97); //y and z kept constant
 						}
 						else
 						{
 							//plane.rotation.z = Math.PI/2;
-                            plane.position.set(6 * index - 50 ,2.5,2.97);
+                            plane.position.set(5 * index - 40 ,2,2.97);
                             //plane.position.set(65*i - 75*Math.floor(gal.num_of_paintings/2) - 15*Math.floor(num_of_paintings/2), 48, 90);
 							plane.rotation.y = Math.PI;
 						}https://aerotwist.com/tutorials/create-your-own-environment-maps/
