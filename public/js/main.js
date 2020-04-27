@@ -209,10 +209,10 @@ else {
 		
 		movement: function() {
 				document.addEventListener("keydown", function(e) {
-					if(e.keyCode === 87 || e.keyCode === 38) { //w or UP
+					if(e.keyCode === 90 || e.keyCode === 38) { //w or UP
 						gal.moveForward = true;	
 					}
-					else if(e.keyCode === 65 || e.keyCode === 37) { //A or LEFT
+					else if(e.keyCode === 81 || e.keyCode === 37) { //A or LEFT
 						gal.moveLeft = true;
 					}
 					else if(e.keyCode === 83 || e.keyCode === 40) { //S or DOWN 
@@ -230,10 +230,10 @@ else {
 				});
 		
 				document.addEventListener("keyup", function(e) {
-					if(e.keyCode === 87 || e.keyCode === 38) { //w or UP
+					if(e.keyCode === 90 || e.keyCode === 38) { //w or UP
 						gal.moveForward = false;
 					}
-					else if(e.keyCode === 65 || e.keyCode === 37) { //A or LEFT
+					else if(e.keyCode === 81 || e.keyCode === 37) { //A or LEFT
 						gal.moveLeft = false;
 					}
 					else if(e.keyCode === 83 || e.keyCode === 40) { //S or DOWN 
