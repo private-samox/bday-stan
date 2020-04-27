@@ -209,10 +209,10 @@ else {
 		
 		movement: function() {
 				document.addEventListener("keydown", function(e) {
-					if(e.keyCode === 87 || e.keyCode === 38) { //w or UP
+					if(e.keyCode === 90 || e.keyCode === 38) { //w or UP
 						gal.moveForward = true;	
 					}
-					else if(e.keyCode === 65 || e.keyCode === 37) { //A or LEFT
+					else if(e.keyCode === 81 || e.keyCode === 37) { //A or LEFT
 						gal.moveLeft = true;
 					}
 					else if(e.keyCode === 83 || e.keyCode === 40) { //S or DOWN 
@@ -230,10 +230,10 @@ else {
 				});
 		
 				document.addEventListener("keyup", function(e) {
-					if(e.keyCode === 87 || e.keyCode === 38) { //w or UP
+					if(e.keyCode === 90 || e.keyCode === 38) { //w or UP
 						gal.moveForward = false;
 					}
-					else if(e.keyCode === 65 || e.keyCode === 37) { //A or LEFT
+					else if(e.keyCode === 81 || e.keyCode === 37) { //A or LEFT
 						gal.moveLeft = false;
 					}
 					else if(e.keyCode === 83 || e.keyCode === 40) { //S or DOWN 
@@ -259,7 +259,7 @@ else {
 
             //Phong is for shiny surfaces
 			gal.floorMaterial = new THREE.MeshPhongMaterial( {map: gal.floorText } );
-			gal.floor = new THREE.Mesh(new THREE.PlaneGeometry(45,45), gal.floorMaterial);
+			gal.floor = new THREE.Mesh(new THREE.PlaneGeometry(80,80), gal.floorMaterial);
 
 			gal.floor.rotation.x = Math.PI/2;
             gal.floor.rotation.y = Math.PI;
@@ -269,18 +269,18 @@ else {
 			gal.wallGroup = new THREE.Group();
 			gal.scene.add(gal.wallGroup);
 
-			gal.wall1 = new THREE.Mesh(new THREE.BoxGeometry(40,6, 0.001), new THREE.MeshLambertMaterial({color: 0xffffff}));
+			gal.wall1 = new THREE.Mesh(new THREE.BoxGeometry(80,6, 0.001), new THREE.MeshLambertMaterial({color: 0xffffff}));
 			gal.wall2 = new THREE.Mesh(new THREE.BoxGeometry(6,6, 0.001), new THREE.MeshLambertMaterial({color: 0xffffff}));
 			gal.wall3 = new THREE.Mesh(new THREE.BoxGeometry(6,6, 0.001), new THREE.MeshLambertMaterial({color: 0xffffff}));
-			gal.wall4 = new THREE.Mesh(new THREE.BoxGeometry(40,6, 0.001), new THREE.MeshLambertMaterial({color: 0xffffff}));
+			gal.wall4 = new THREE.Mesh(new THREE.BoxGeometry(80,6, 0.001), new THREE.MeshLambertMaterial({color: 0xffffff}));
 
 			gal.wallGroup.add(gal.wall1, gal.wall2, gal.wall3, gal.wall4);
 			gal.wallGroup.position.y = 3;
 
 			gal.wall1.position.z = -3;
-			gal.wall2.position.x = -20;
+			gal.wall2.position.x = -30;
 			gal.wall2.rotation.y = Math.PI/2;
-			gal.wall3.position.x = 20;
+			gal.wall3.position.x = 30;
 			gal.wall3.rotation.y = -Math.PI/2;
 			gal.wall4.position.z = 3;
 			gal.wall4.rotation.y = Math.PI;
@@ -293,7 +293,7 @@ else {
 			//Ceiling//
 			//gal.ceilMaterial = new THREE.MeshLambertMaterial({color: 0x8DB8A7});
 			gal.ceilMaterial = new THREE.MeshLambertMaterial({color: 0xeeeeee});
-			gal.ceil = new THREE.Mesh(new THREE.PlaneGeometry(40,6), gal.ceilMaterial);
+			gal.ceil = new THREE.Mesh(new THREE.PlaneGeometry(80,6), gal.ceilMaterial);
 			gal.ceil.position.y = 6;
 			gal.ceil.rotation.x = Math.PI/2;
 
@@ -330,7 +330,8 @@ else {
            
 			gal.num_of_paintings = 30;
 			gal.paintings = [];
-			for(var i = 0; i < 12; i++){
+			var numberOfImages = 22
+			for(var i = 0; i < numberOfImages; i++){
 				(function(index) {
                     //https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image
 					var artwork = new Image();
@@ -351,15 +352,15 @@ else {
 						var plane = new THREE.Mesh(new THREE.PlaneGeometry(ratiow, ratioh),img); //width, height
 						plane.overdraw = true;
                         //-1 because index is 0 - n-1 but num of paintings is n 
-						if(index <= Math.floor(12/2)-1) //bottom half
+						if(index <= Math.floor(numberOfImages/2)-1) //bottom half
 						{
 							//plane.rotation.z = Math.PI/2;
-                            plane.position.set(6 * index - 15,2.5,-2.97); //y and z kept constant
+                            plane.position.set(5 * index - 25,2,-2.97); //y and z kept constant
 						}
 						else
 						{
 							//plane.rotation.z = Math.PI/2;
-                            plane.position.set(6 * index - 50 ,2.5,2.97);
+                            plane.position.set(5 * index - 25 - 5*(Math.floor(numberOfImages/2)) ,2,2.97);
                             //plane.position.set(65*i - 75*Math.floor(gal.num_of_paintings/2) - 15*Math.floor(num_of_paintings/2), 48, 90);
 							plane.rotation.y = Math.PI;
 						}https://aerotwist.com/tutorials/create-your-own-environment-maps/
@@ -418,10 +419,10 @@ else {
                 if(gal.controls.getObject().position.z > 2) {
                         gal.controls.getObject().position.z = 2;
                 }
-                if(gal.controls.getObject().position.x < -18) {
+                if(gal.controls.getObject().position.x < -30) {
                         gal.controls.getObject().position.x = -18;
                 }
-                if(gal.controls.getObject().position.x > 18) {
+                if(gal.controls.getObject().position.x > 30) {
                         gal.controls.getObject().position.x = 18;
                 }
 
