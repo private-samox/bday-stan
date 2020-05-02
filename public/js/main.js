@@ -330,7 +330,7 @@ else {
            
 			gal.num_of_paintings = 30;
 			gal.paintings = [];
-			var numberOfImages = 7
+			var numberOfImages = 20
 			for(var i = 0; i < numberOfImages; i++){
 				(function(index) {
                     //https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image
@@ -355,7 +355,7 @@ else {
 						if(index <= Math.floor(numberOfImages/2)-1) //bottom half
 						{
 							//plane.rotation.z = Math.PI/2;
-                            plane.position.set(5 * index - 25,2.9,-2.97); //y and z kept constant
+                            plane.position.set(5 * index - 15,2.9,-2.97); //y and z kept constant
 						}
 						else
 						{
