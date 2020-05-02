@@ -252,7 +252,7 @@ else {
 			gal.scene.add(gal.worldLight);
 
             //set the floor up
-            gal.floorText = THREE.ImageUtils.loadTexture("img/Textures/Floor.jpg");
+            gal.floorText = THREE.ImageUtils.loadTexture("public/img/Textures/Floor.jpg");
             gal.floorText.wrapS = THREE.RepeatWrapping;
             gal.floorText.wrapT = THREE.RepeatWrapping;
             gal.floorText.repeat.set(24,24);
@@ -330,14 +330,14 @@ else {
            
 			gal.num_of_paintings = 30;
 			gal.paintings = [];
-			for(var i = 0; i < gal.num_of_paintings; i++){
+			for(var i = 0; i < 12; i++){
 				(function(index) {
                     //https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image
 					var artwork = new Image();
 					var ratiow = 0;
 					var ratioh = 0;
 
-					var source = './img/Artworks/' + (index).toString() + '.jpg';
+					var source = 'public/img/Artworks/' + (index).toString() + '.jpg';
 					artwork.src = source;
                     
                     var texture = THREE.ImageUtils.loadTexture(artwork.src);
@@ -351,15 +351,15 @@ else {
 						var plane = new THREE.Mesh(new THREE.PlaneGeometry(ratiow, ratioh),img); //width, height
 						plane.overdraw = true;
                         //-1 because index is 0 - n-1 but num of paintings is n 
-						if(index <= Math.floor(gal.num_of_paintings/2)-1) //bottom half
+						if(index <= Math.floor(12/2)-1) //bottom half
 						{
 							//plane.rotation.z = Math.PI/2;
-                            plane.position.set(2.5 * index - 17.5,2,-2.96); //y and z kept constant
+                            plane.position.set(6 * index - 15,2.5,-2.97); //y and z kept constant
 						}
 						else
 						{
 							//plane.rotation.z = Math.PI/2;
-                            plane.position.set(2.5 * index - 55 ,2 ,2.96);
+                            plane.position.set(6 * index - 50 ,2.5,2.97);
                             //plane.position.set(65*i - 75*Math.floor(gal.num_of_paintings/2) - 15*Math.floor(num_of_paintings/2), 48, 90);
 							plane.rotation.y = Math.PI;
 						}https://aerotwist.com/tutorials/create-your-own-environment-maps/
@@ -430,7 +430,7 @@ else {
                 //calculate objects interesting ray
                 gal.intersects = gal.raycaster.intersectObjects(gal.paintings);
                 if(gal.intersects.length !== 0) {
-                    gal.intersects[0].object.material.color.set(0xaaeeee);
+                    // gal.intersects[0].object.material.color.set(0xaaeeee);
                     //console.log(intersects[0].distance);
                     console.log(gal.intersects[0].point);
                 }
