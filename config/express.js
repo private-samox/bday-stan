@@ -11,6 +11,7 @@ module.exports = function() {
 	app.use(bodyParser.json());
 
 	app.use('/gallery/public', express.static('public'));
+	app.use('/public', express.static('public'));
 
 	app.get('/gallery', function(req,res) {
 		res.sendFile(path.join(__dirname + '/../index.html'));
